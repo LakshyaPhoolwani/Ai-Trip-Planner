@@ -27,23 +27,23 @@ function HotelCardItem({ hotel }: Props) {
   };
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-2 sm:gap-3">
       {/* <Image src="https://unsplash.com/photos/white-bed-linen-with-throw-pillows-Yrxr3bsPdS0" alt='place-image' width={400} height={200} className="rounded-xl shadow object-cover mb-2" /> */}
       <img
         // src={photoUrl?photoUrl:"https://plus.unsplash.com/premium_photo-1661964071015-d97428970584?q=80&w=1020&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
         src={"https://plus.unsplash.com/premium_photo-1661964071015-d97428970584?q=80&w=1020&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
         alt={hotel?.hotel_name}
-        className="w-[20vw] h-[18vh] rounded-xl shadow object-cover mb-2"
+        className="w-full h-32 sm:h-40 lg:h-48 rounded-xl shadow object-cover"
       />
-      <h2 className="font-semibold text-lg">{hotel?.hotel_name}</h2>
-      <h2 className="text-gray-500">{hotel?.hotel_address}</h2>
-      <div className="flex justify-between items-center">
-        <p className=" flex gap-2 items-center text-green-500">
-          <Wallet />
+      <h2 className="font-semibold text-sm sm:text-base lg:text-lg line-clamp-2">{hotel?.hotel_name}</h2>
+      <h2 className="text-gray-500 text-xs sm:text-sm line-clamp-2">{hotel?.hotel_address}</h2>
+      <div className="flex justify-between items-center gap-2">
+        <p className="flex gap-1 sm:gap-2 items-center text-green-500 text-xs sm:text-sm">
+          <Wallet className="w-3 h-3 sm:w-4 sm:h-4" />
           {hotel.price_per_night}
         </p>
-        <p className="text-yellow-500 flex gap-2 items-center">
-          <Star />
+        <p className="text-yellow-500 flex gap-1 sm:gap-2 items-center text-xs sm:text-sm">
+          <Star className="w-3 h-3 sm:w-4 sm:h-4" />
           {hotel.rating}
         </p>
       </div>
@@ -51,7 +51,7 @@ function HotelCardItem({ hotel }: Props) {
         href={`https://www.google.com/maps/search/?api=1&query=${hotel?.hotel_name}`}
         target="_blank"
       >
-        <Button variant="outline" className="mt-2 w-full">
+        <Button variant="outline" className="mt-2 w-full text-xs sm:text-sm">
           View
         </Button>
       </Link>

@@ -20,20 +20,20 @@ function CreateNewTrip() {
     setTripDetailInfo(undefined);
   }, []);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-10">
-      <div>
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 p-4 sm:p-6 lg:p-10">
+      <div className="lg:col-span-1">
         <ChatBox />
       </div>
-      <div className="col-span-2 relative">
+      <div className="lg:col-span-2 relative order-first lg:order-last">
         {activeIndex == 0 ? <Itinerary /> : <GlobalMap />}
         <Tooltip>
-          <TooltipTrigger className="absolute bg-black hover:bg-gray-700 bottom-10 left-[45%] rounded-xl">
+          <TooltipTrigger className="absolute bg-black hover:bg-gray-700 bottom-4 sm:bottom-6 lg:bottom-10 left-1/2 transform -translate-x-1/2 rounded-xl z-20">
             <Button
-              size="lg"
-              className="bg-black hover:bg-gray-700"
+              size={window?.innerWidth < 640 ? "default" : "lg"}
+              className="bg-black hover:bg-gray-700 text-white"
               onClick={() => setActiveIndex(activeIndex === 0 ? 1 : 0)}
             >
-              {activeIndex == 0 ? <Plane /> : <Globe2 />}
+              {activeIndex == 0 ? <Plane className="w-4 h-4 sm:w-5 sm:h-5" /> : <Globe2 className="w-4 h-4 sm:w-5 sm:h-5" />}
             </Button>
           </TooltipTrigger>
           <TooltipContent>Switch between Map and Trip</TooltipContent>

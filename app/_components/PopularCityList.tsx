@@ -9,8 +9,8 @@ export function PopularCityList() {
   ));
 
   return (
-    <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-3xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+    <div className="w-full h-full py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+      <h2 className="max-w-7xl mx-auto text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-neutral-800 dark:text-neutral-200 font-sans mb-4 sm:mb-6 lg:mb-8">
         Popular Destinations to Explore
       </h2>
       <Carousel items={cards} />

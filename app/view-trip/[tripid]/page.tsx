@@ -30,11 +30,11 @@ function ViewTrip() {
   };
 
   return (
-    <div className="grid grid-cols-5 scrollbar-hide">
-      <div className="col-span-3 scrollbar-hide`">
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-0 p-4 lg:p-0 scrollbar-hide min-h-screen">
+      <div className="lg:col-span-3 scrollbar-hide order-2 lg:order-1">
         <Itinerary />
       </div>
-      <div className="col-span-2 scrollbar-hide">
+      <div className="lg:col-span-2 scrollbar-hide order-1 lg:order-2 h-[50vh] lg:h-auto">
         <GlobalMap />
       </div>
     </div>

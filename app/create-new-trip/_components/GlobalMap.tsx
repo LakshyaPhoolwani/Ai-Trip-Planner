@@ -63,7 +63,7 @@ function GlobalMap() {
   return (
     <div
         ref={mapContainerRef}
-        style={{ width: "95%", height: "85vh", borderRadius: 20 }}
+        className="w-[95%] h-[70vh] sm:h-[75vh] lg:h-[85vh] rounded-2xl"
       />
   );
 }

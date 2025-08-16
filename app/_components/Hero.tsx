@@ -36,59 +36,61 @@ function Hero() {
     router.push("/create-new-trip");
   };
   return (
-    <div className="mt-24 w-full flex justify-center ">
+    <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 w-full flex justify-center px-4 sm:px-6 lg:px-8">
       {/* Content  */}
-      <div className="max-w-3xl w-full text-center space-y-6 ">
-        <h1 className="text-xl md:text-5xl font-bold">
+      <div className="max-w-4xl w-full text-center space-y-4 sm:space-y-6">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
           Hey, I'm your AI{" "}
           <span className="text-primary">travel assistant!</span>
         </h1>
-        <p className="text-lg">
+        <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
           Tell me what you want, and I'll handle the rest: Flights, Hotels, trip
           Planner -all in seconds
         </p>
         {/* Input Box  */}
         <div>
-          <div className="border rounded-2xl p-4 relative flex items-center">
+          <div className="border rounded-2xl p-3 sm:p-4 relative flex items-center max-w-2xl mx-auto">
             <Textarea
               placeholder="Create a trip from Paris to New York ..."
-              className="w-full h-28 bg-transparent border-none focus-visible:ring-0 shadow-none resize-none pr-12"
+              className="w-full h-20 sm:h-24 md:h-28 bg-transparent border-none focus-visible:ring-0 shadow-none resize-none pr-12 text-sm sm:text-base"
             />
             <Button
               size={"icon"}
-              className="absolute bottom-4 right-4"
+              className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 h-8 w-8 sm:h-10 sm:w-10"
               onClick={() => onSend()}
             >
-              <Send className="h-4 w-4"></Send>
+              <Send className="h-3 w-3 sm:h-4 sm:w-4"></Send>
             </Button>
           </div>
         </div>
         {/* Suggestion list  */}
-        <div className="flex gap-5">
+        <div className="grid grid-cols-2 lg:flex gap-2 sm:gap-3 lg:gap-5 max-w-4xl mx-auto">
           {suggestion.map((suggestions, index) => (
             <div
               key={index}
-              className="flex items-center space-x-2 gap-2 border rounded-full p-2 cursor-pointer hover:bg-primary/80 transition-all hover:text-white"
+              className="flex items-center justify-center space-x-1 sm:space-x-2 gap-1 sm:gap-2 border rounded-full p-2 sm:p-3 cursor-pointer hover:bg-primary/80 transition-all hover:text-white text-center"
             >
-              {suggestions.icon}
-              <h2 className="text-xs">{suggestions.title}</h2>
+              <span className="flex-shrink-0">{suggestions.icon}</span>
+              <h2 className="text-xs sm:text-sm lg:text-base whitespace-nowrap overflow-hidden text-ellipsis">{suggestions.title}</h2>
             </div>
           ))}
         </div>
 
-        <div className="flex justify-center items-center flex-col">
-          <h2 className="my-7 mt-14 flex gap-2 text-center">
+        <div className="flex justify-center items-center flex-col mt-8 sm:mt-12 lg:mt-14">
+          <h2 className="my-4 sm:my-7 flex flex-col sm:flex-row gap-1 sm:gap-2 text-center items-center text-sm sm:text-base">
             Not Sure where to start? <strong>See how it works</strong>{" "}
             <ArrowDown />
           </h2>
           {/* Video Section  */}
-          <HeroVideoDialog
-            className="block dark:hidden"
-            animationStyle="from-center"
-            videoSrc="https://www.example.com/dummy-video"
-            thumbnailSrc="https://mma.prnewswire.com/media/2401528/1_MindtripProduot.jpg?p=facebook"
-            thumbnailAlt="Dummy Video Thumbnail"
-          />
+          <div className="w-full max-w-3xl">
+            <HeroVideoDialog
+              className="block dark:hidden w-full"
+              animationStyle="from-center"
+              videoSrc="https://www.example.com/dummy-video"
+              thumbnailSrc="https://mma.prnewswire.com/media/2401528/1_MindtripProduot.jpg?p=facebook"
+              thumbnailAlt="Dummy Video Thumbnail"
+            />
+          </div>
         </div>
       </div>
     </div>

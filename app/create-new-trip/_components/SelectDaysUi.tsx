@@ -31,84 +31,37 @@ const SelectDaysUi: React.FC<SelectDaysUiProps> = ({
   };
 
   return (
-    <div style={styles.container}>
-      <p style={styles.question}>
+    <div className="font-sans bg-white rounded-lg p-4 sm:p-5 w-full max-w-sm mx-auto shadow-sm border">
+      <p className="text-sm sm:text-base mb-4">
         Thanks for sharing! How many days are you planning to spend on this trip to India?
       </p>
 
-      <div style={styles.selector}>
-        <p style={styles.label}>How many days do you want to travel?</p>
-        <div style={styles.counter}>
-          <button style={styles.circleButton} onClick={decreaseDays}>
+      <div className="border border-gray-200 rounded-lg p-4 sm:p-5 text-center">
+        <p className="font-semibold mb-3 text-sm sm:text-base">How many days do you want to travel?</p>
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4">
+          <button 
+            className="border border-gray-300 rounded-full w-8 h-8 sm:w-9 sm:h-9 text-lg cursor-pointer bg-white hover:bg-gray-50 transition-colors flex items-center justify-center"
+            onClick={decreaseDays}
+          >
             −
           </button>
-          <span style={styles.daysText}>{days} Days</span>
-          <button style={styles.circleButton} onClick={increaseDays}>
+          <span className="text-base sm:text-lg font-semibold min-w-[80px]">{days} Days</span>
+          <button 
+            className="border border-gray-300 rounded-full w-8 h-8 sm:w-9 sm:h-9 text-lg cursor-pointer bg-white hover:bg-gray-50 transition-colors flex items-center justify-center"
+            onClick={increaseDays}
+          >
             +
           </button>
         </div>
-        <button style={styles.confirmButton} onClick={handleConfirm}>
+        <button 
+          className="bg-primary text-white border-none rounded-md px-4 sm:px-5 py-2 cursor-pointer text-sm font-semibold hover:bg-primary/90 transition-colors"
+          onClick={handleConfirm}
+        >
           Confirm
         </button>
       </div>
     </div>
   );
-};
-
-// Inline styling
-const styles: { [key: string]: React.CSSProperties } = {
-  container: {
-    fontFamily: "Arial, sans-serif",
-    backgroundColor: "#fff",
-    borderRadius: "8px",
-    padding: "20px",
-    width: "350px",
-    boxShadow: "0px 4px 8px rgba(0,0,0,0.1)",
-  },
-  question: {
-    fontSize: "14px",
-    marginBottom: "16px",
-  },
-  selector: {
-    border: "1px solid #eee",
-    borderRadius: "8px",
-    padding: "20px",
-    textAlign: "center",
-  },
-  label: {
-    fontWeight: "bold",
-    marginBottom: "10px",
-  },
-  counter: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "12px",
-    marginBottom: "15px",
-  },
-  circleButton: {
-    border: "1px solid #ccc",
-    borderRadius: "50%",
-    width: "36px",
-    height: "36px",
-    fontSize: "18px",
-    cursor: "pointer",
-    backgroundColor: "#fff",
-  },
-  daysText: {
-    fontSize: "18px",
-    fontWeight: "bold",
-  },
-  confirmButton: {
-    backgroundColor: "#FF4500",
-    color: "#fff",
-    border: "none",
-    borderRadius: "6px",
-    padding: "8px 20px",
-    cursor: "pointer",
-    fontSize: "14px",
-    fontWeight: "bold",
-  },
 };
 
 export default SelectDaysUi;

@@ -184,19 +184,19 @@ function Itinerary() {
       ]
     : [];
   return (
-    <div className="relative w-full overflow-auto h-[83vh]">
+    <div className="relative w-full overflow-auto h-[70vh] sm:h-[75vh] lg:h-[83vh]">
       {/* @ts-ignore */}
       {tripData ? (
         <Timeline data={data} tripData={tripData} />
       ) : (
-        <div>
-          <h2 className="flex gap-2 text-3xl text-white left-53 items-center absolute bottom-20 ">
+        <div className="relative">
+          <h2 className="flex flex-col sm:flex-row gap-2 text-lg sm:text-2xl lg:text-3xl text-white items-center absolute bottom-10 sm:bottom-16 lg:bottom-20 left-4 sm:left-8 lg:left-12 z-10 max-w-xs sm:max-w-md lg:max-w-lg">
             <ArrowLeft /> Getting to know you to build perfect trip
           </h2>
           <img
             src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww"
             alt="travel"
-            className="w-full h-[40vw] object-cover rounded-3xl"
+            className="w-full h-[50vh] sm:h-[60vh] lg:h-[70vh] object-cover rounded-2xl sm:rounded-3xl"
           />
           
         </div>

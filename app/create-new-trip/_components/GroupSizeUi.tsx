@@ -63,13 +63,14 @@ export const SelectTravelesList = [
 
 function GroupSizeUi({ onSelectOption = (v: string) => {} }: { onSelectOption?: any }) {
   return (
-    <div className='grid grid-cols-2 md:grid-cols-4 gap-2 items-center mt-1'>
+    <div className='grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 items-center mt-2 sm:mt-3'>
       {SelectTravelesList.map((item,index) => (
-        <div key={index} className='p-3 border rounded-2xl bg-white hover:border-primary cursor-pointer'
+        <div key={index} className='p-2 sm:p-3 border rounded-2xl bg-white hover:border-primary cursor-pointer transition-all hover:shadow-md flex flex-col items-center text-center'
         onClick={()=> onSelectOption(item.title+": "+item.people)}>
 
-          <h2>{item.icon}</h2>
-          <h2>{item.title}</h2>
+          <div className="text-xl sm:text-2xl mb-1 sm:mb-2">{item.icon}</div>
+          <h2 className="text-sm sm:text-base font-medium">{item.title}</h2>
+          <p className="text-xs text-gray-500 mt-1">{item.people}</p>
         </div>
       ))}
     </div>
